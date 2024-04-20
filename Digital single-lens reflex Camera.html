@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Digital single-lens reflex Camera</title>
+  <style>
+
+    h2 {text-align: center;}
+    h3 {text-align: left;}
+    .gallery {
+     grid-template-columns: 1fr 1fr; 
+      grid-template-rows: 2fr 2fr; 
+      grid-gap: 20px;
+      height: 300px;
+    }
+    
+    .gallery img {
+      width: 500px;
+      height: 300px%;
+      object-fit: cover;
+      cursor: pointer;
+    }
+    gallery-item.name {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background-color: rgba(210, 210, 210);
+      color: #fff;
+      padding: 20;
+      font-size: 100px;
+      text-align: center;
+    }
+    
+    .popup {
+      display: none;
+      align-items: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(90,90,90);
+      z-index: auto;
+      overflow: auto;
+      max-height: 80%;
+      max-width: 80%;
+    }
+    
+    .popup-content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 10px;
+      color: #fff;
+      font-size: 20px;     
+    }
+
+    .introduction {
+      word-break:break-all;
+      font-size:25px;
+    }
+
+    .money {font-size:40px;}
+
+  </style>
+  <script>
+
+    document.addEventListener("DOMContentLoaded", function() {
+      var images = document.querySelectorAll(".gallery img");
+      var popup = document.querySelector(".popup");
+      var popupContent = document.querySelector(".popup-content");
+      
+      images.forEach(function(image) {
+        image.addEventListener("click", function() {
+          var imgSrc = this.getAttribute("src");
+          var imgAlt = this.getAttribute("alt");
+          var description = this.getAttribute("data-description");
+          popupContent.innerHTML = "<img src='" + imgSrc + "' alt='" + imgAlt + "'<p>" + description + "</p>";
+          popup.style.display = "flex";
+        });
+      });
+      
+      popup.addEventListener("click", function() {
+        popup.style.display = "none";
+      });
+    });
+  </script>
+</head>
+<body style="background-color:lightgrey;">
+
+      <h2>CS1102 - Course Project - 2023/2024 Semester B<br></br>
+      Group17:Chan Yat Long Justin,Yeung Sum Yi,Chak Man Yin Hilda,Chang Cho Wun</h2> 
+
+  <h3><a href="https://derickchang.github.io/CS/main.html">Return Home Page</a></h3>
+  
+  <h1>Digital single-lens reflex Camera</h1>
+<p class="introduction">Digital single-lens reflex, also called DSLR, is widely considered the best type of camera for the best photo quality for professional taking these days. It has the feature of interchangeable lens for different situations. It is very traditional with the mirror box and optical pathfinder in the camera..
+</p>
+<br></br>
+  <div class="gallery">
+    <div class="gallery-item">
+<h2><div class="name"><b>Digital single-lens reflex camera</b></div></h2>
+    <img src="EOS 5D Mark IV Kit (EF 24 - 105 IS II USM).png" alt="DSLRs" 
+    data-description="
+      <h2>Pro:</h2>
+      <ul>
+      <li>Better battery life</li>
+      <li>Larger lens selection</li>
+      <li>more compact than DSLRs</li>
+      <li>Faster autofocus</li>
+    </ul>
+      <h2>Con:</h2>
+      <ul>
+      <li>Heavy, Noisy and Bulky</li>
+       <li>Slower shooting speeds</li>
+       <li>DSLRs offer 4k or Ultra HD video only for higher-end models</li>
+       <li>Expensive</li>
+      </ul>">>
+      <div class="money">EOS 5D Mark IV Kit (EF 24 - 105 IS II USM) HKD$30,680</div>
+
+    
+    
+    </div>   
+  </div> 
+  <div class="popup">
+    <div class="popup-content"></div>
+  </div>
+</body>
+</html>
