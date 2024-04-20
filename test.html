@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html> 
+<style type="text/css">
+	h3 {text-align: left;}
+</style>  
+<head>
+	<title>Picking A Suitable Camera for You</title>
+</head>
+<body>
+	<h3><a href="https://derickchang.github.io/CS/main.html">Return Home Page</a></h3>
+	
+	<h1>Picking the Suitable Camera for You</h1>
+	<h1>Hello, What is your name?</h1>
+	<input id="input1"><br><br>
+	<h1>What is your budget for your camera?</h1>
+	<h4>Please enter High or Low</h4>
+	<input id="input2"><br><br>
+	<h1>Do you mind if your camera is heavy?</h1>
+	<h4>Please enter Yes or No</h4>
+	<input id="input3"><br><br>
+    <h1>Are you into professional photo-taking?</h1>
+    <h4>Please enter Yes or No</h4>
+    <input id="input4"><br><br>
+	<button onclick="i()"> Submit</button>
+	<h2 id="message1"></h2>
+	<h2 id="message2"></h2>
+	<style>
+		body{background-color: beige;text-align: center;color: ;}
+	</style>
+	<script>
+		function i() {
+			let input1 = document.querySelector("#input1");
+			let input2 = document.querySelector("#input2");
+			let input3 = document.querySelector("#input3");
+			let input4 = document.querySelector("#input4");
+			message1.innerHTML = "Hello, " + input1.value + ".";
+				if (input2.value == "Low") 
+					return message2.innerHTML = "Our recommended digital camera for you is Compact Camera.";
+				else if (input3.value == "Yes" && input4.value == "Yes" && input2.value == "High")
+					return message2.innerHTML = "Our recommended digital camera for you is DSLR.";
+				else if (input3.value == "Yes" && input4.value == "No" && input2.value == "High")
+					return message2.innerHTML = "Our recommended digital camera for you is Bridge Camera.";
+				else if (input3.value == "No" && input4.value == "Yes" && input2.value == "High")
+					return message2.innerHTML = "Our recommended digital camera for you is Mirrorless.";
+				else if (input3.value == "No" && input4.value == "No" && input2.value == "High")
+					return message2.innerHTML = "Our recommended digital camera for you is Camera Phone";		
+				else 
+					return message2.innerHTML = "Please try again, make sure to follow the instructions. Remember to Capatalize,use Exact Wordings and No Space!";
+			}
+	</script>
+</body>
+CS1102 - Course Project - 2023/2024 Semester B<br></br>
+Group17:Chan Yat Long Justin,Yeung Sum Yi,Chak Man Yin Hilda,Chang Cho Wun 
+</html>
