@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Digital Camera Development</title>
+  <script>
+    var comment = [];
+    function addComment(){
+      var s,i;
+      comment[comment.length]=document.getElementById("textinput").value;
+      s="<ul>";
+      for(i=0;i<comment.length;i++){
+        s+="<li>"+comment[i]+"</li>";
+      }
+      s+="</ul>";
+      document.getElementById("result").innerHTML=s;
+    }
+  </script> 
+
+  <style>
+  
+    div a {
+      background-color: brown;
+      color: white;
+  text-decoration: none;
+  font-size: 40px;
+  padding: 15px;
+  display:inline-block;
+}
+ul {
+  display: inline;
+  margin: 0;
+  padding: 0;
+}
+ul li {display: inline-block;}
+ul li:hover {background: #555;}
+ul li:hover ul {display: block;}
+ul li ul {
+  position: absolute;
+  width: 200px;
+  display: none;
+}
+ul li ul li { 
+  background: #555; 
+  display: block; 
+}
+ul li ul li a {display:block !important;} 
+ul li ul li:hover {background: #666;}
+    body {
+      font-family: "Times New Roman";
+      background-color: #F1D3B2
+    }
+    header {
+      background-color:#46211A;
+      padding: 1px;
+      text-align: center;
+    }
+    h1 {
+      font-size: 38px;
+      color: white;
+    }
+    p {
+      font-size: 18px;
+    }
+    .dark-red {
+      color: darkred;
+    }
+    .bright-red {
+      color: #A43820;
+      font-size: 24px;
+      text-align: center;
+    }
+    .big-button {
+      display: block;
+      margin: 0 auto;
+      font-size: 36px;
+      color: white;
+      background-color: #A43820;
+    }
+
+
+  </style>
+</head>
+<body>
+  <header>
+    <h1><u>Background of Digital Camera Development</u></h1>
+  </header>
+  <div>
+  <a href="#">Link:</a>
+  <ul>
+    <li>
+      <a href="#">Dropdown Link</a>
+      <ul>
+        <li><a href="#">Test</a></li>
+        <li><a href="#">Camera</a></li>
+        <li><a href="#">Future</a></li>
+      </ul>
+    </li>
+  </ul>
+    <p>
+      Photography has undoubtedly been transformed by digital cameras. In 1975, Kodak stunned the world by debuting the <span class="dark-red">first digital camera</span>. Weighing around 3.6kg, it took 23 seconds to take a low-resolution picture. Just imagine your entire family posing and smiling for such an extended period of time; it must have been a difficult job!
+    </p>
+    <img src="first_camera.png" alt="First Digital Camera" width="300" />
+    <p>
+      Fast forward to today, cameras have significantly improved in terms of <span class="dark-red">speed, resolution, low-light performance, connectivity, and other areas</span>. Digital cameras are essential in many fields these days, especially for journalists who depend on them to take high-resolution images in real-time so stories can be reported quickly, scientists who capture objects in astronomy and record seconds or days of details for their studies.
+    </p>
+    <p>
+      As we dig deeper into the topic, we will explore the architecture of <b>independent and dependent cameras</b>, highlighting their merits and demerits, as well as their application in various industries of the economy.
+    </p>
+    <p class="bright-red">
+      Are you prepared for this amazing adventure? Click the button!
+    </p>
+    <button class="big-button" onclick="takePhoto()">Say Cheese!</button>
+    <p>Do you have any comment?</p>
+    <input type="text" id="textinput"/>
+    <button id="button_add" onclick="addComment();">Add</button>
+    <p>Your comment:</p>
+    <p id="result"></p>
+  </main>
+  <script>
+    function takePhoto() {
+      alert("Cheese! A photo has been taken! Let's learn more about cameras!");
+    }
+  </script>
+</body>
+</html>
