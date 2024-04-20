@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Bridge Camera</title>
+  <style>
+
+    h2 {text-align: center;}
+    h3 {text-align: left;} 
+    .gallery {
+     grid-template-columns: 1fr 1fr; 
+      grid-template-rows: 2fr 2fr; 
+      grid-gap: 20px;
+      height: 400px;
+    }
+    
+    .gallery img {
+      width: 500px;
+      height: 300px%;
+      object-fit: cover;
+      cursor: pointer;
+    }
+    gallery-item.name {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background-color: rgba(210, 210, 210);
+      color: #fff;
+      padding: 20;
+      font-size: 100px;
+      text-align: center;
+    }
+    
+    .popup {
+      display: none;
+      align-items: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(90,90,90);
+      z-index: auto;
+      overflow: auto;
+      max-height: 80%;
+      max-width: 80%;
+    }
+    
+    .popup-content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 10px;
+      color: #fff;
+      font-size: 20px;     
+    }
+
+    .introduction {
+      word-break:break-all;
+      font-size:25px;
+    }
+
+    .money {font-size:40px;}
+
+  </style>
+  <script>
+
+    document.addEventListener("DOMContentLoaded", function() {
+      var images = document.querySelectorAll(".gallery img");
+      var popup = document.querySelector(".popup");
+      var popupContent = document.querySelector(".popup-content");
+      
+      images.forEach(function(image) {
+        image.addEventListener("click", function() {
+          var imgSrc = this.getAttribute("src");
+          var imgAlt = this.getAttribute("alt");
+          var description = this.getAttribute("data-description");
+          popupContent.innerHTML = "<img src='" + imgSrc + "' alt='" + imgAlt + "'<p>" + description + "</p>";
+          popup.style.display = "flex";
+        });
+      });
+      
+      popup.addEventListener("click", function() {
+        popup.style.display = "none";
+      });
+    });
+  </script>
+</head>
+<body style="background-color:lightgrey;">
+
+  <h2>CS1102 - Course Project - 2023/2024 Semester B<br></br>
+      Group17:Chan Yat Long Justin,Yeung Sum Yi,Chak Man Yin Hilda,Chang Cho Wun</h2> 
+
+  <h3><a href="https://derickchang.github.io/CS/index.html">Return Home Page</a></h3>
+  
+  <h1>Bridge Camera</h1>
+<p class="introduction">Bridge Camera, which is also as known in other names like superzoom, megazoom, ultrazoom, is the beginner level of professional cameras. It is usually bulky as it has the traditional mirror box and optical viewfinders inside the camera. The lens of the camera is fixed and usually long and is therefore great for zooming and capture wide angles
+</p>
+<br></br>
+  <div class="gallery">
+    <div class="gallery-item">
+<h2><div class="name"><b>Bridge Camera</b></div></h2>
+    <img src="kodak1.jpg" alt="kodak" 
+    data-description="
+      <h2>Pro:</h2>
+      <ul>
+      <li>Contains professional settings like image stabilization</li>
+      <li>LCD monitors to check the Photos</li>
+      <li>Provides a Wide Zoom Capability</li>
+      <li>Generally Cheaper Than DSLR</li>
+    </ul>
+      <h2>Con:</h2>
+      <ul>
+      <li>It Has Lesser Image Quality Than DSLR Single Lens</li>
+       <li>It Has Generally Low Native ISO Sensitivity</li>
+       <li>It Has A Restricted Range Of Apertures</li>
+      </ul>">>
+      <div class="money">Kodak Pixpro AZ528 HKD$1992.64</div>
+    
+    </div>   
+  </div> 
+  <div class="popup">
+    <div class="popup-content"></div>
+  </div>
+</body>
+</html>
