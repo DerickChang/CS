@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Digital Camera Development</title>
+  <script>
+    var comment = [];
+    function addComment(){
+      var s,i;
+      comment[comment.length]=document.getElementById("textinput").value;
+      s="<ul>";
+      for(i=0;i<comment.length;i++){
+        s+="<li>"+comment[i]+"</li>";
+      }
+      s+="</ul>";
+      document.getElementById("result").innerHTML=s;
+    }
+  </script> 
+
+  <style>
+
+    h2 {
+     text-align: left;
+      color: white;
+    }
+  
+    div a {
+      background-color: brown;
+      color: white;
+  text-decoration: none;
+  font-size: 25px;
+  padding: 15px;
+  display:inline-block;
+}
+ul {
+  display: inline;
+  margin: 0;
+  padding: 0;
+}
+ul li {display: inline-block;}
+ul li:hover {background: #555;}
+ul li:hover ul {display: block;}
+ul li ul {
+  position: absolute;
+  width: 200px;
+  display: none;
+}
+ul li ul li { 
+  background: #555; 
+  display: block; 
+}
+ul li ul li a {display:block !important;} 
+ul li ul li:hover {background: #666;}
+    body {
+      font-family: "Times New Roman";
+      background-color: #F1D3B2
+    }
+    header {
+      background-color:#46211A;
+      padding: 1px;
+      text-align: center;
+    }
+    h1 {
+      font-size: 38px;
+      color: white;
+    }
+    p {
+      font-size: 18px;
+    }
+    .dark-red {
+      color: darkred;
+    }
+    .bright-red {
+      color: #A43820;
+      font-size: 24px;
+      text-align: center;
+    }
+    .big-button {
+      display: block;
+      margin: 0 auto;
+      font-size: 36px;
+      color: white;
+      background-color: #A43820;
+    }
+    dt {
+      font-size: 18px;
+    }
+    dd{
+      font-size: 18px;
+    }
+    .dark-red{
+      color: darkred;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>CS1102 - Exploring Digital Camera - 2023/2024 Semester B<br></br>
+Chan Yat Long Justin 57141680,Yeung Sum Yi 57838077,Chak Man Yin Hilda 57839283,Chang Cho Wun 57841475 </h1>
+<h2><div class = "left"><ul>Techiques:<br></br>
+  <li>User Input</li><br></br>
+  <li>EventListener</li><br></br>
+  <li>Conditional loop</li></h2>
+</ul>
+</div>
+  </header>
+  <div>
+  <a href="https://derickchang.github.io/CS/test.html">Pick Camera</a>
+  <ul>
+    <li>
+      <a href="https://derickchang.github.io/CS/future-trend.html">Future Trend</a>
+      <ul>
+        <li><a href="https://derickchang.github.io/CS/Bridge%20Camera.html">Bridge Camera</a></li>
+        <li><a href="https://derickchang.github.io/CS/Camera%20Phone.html">Phone Camera</a></li>
+        <li><a href="https://derickchang.github.io/CS/Digital%20single-lens%20reflex%20Camera.html">Digital single-lens reflex Camera</a></li>
+        <li><a href="https://derickchang.github.io/CS/Mirrorless%20Interchangeable%20Camera.html">Mirrorless Interchangeable Camera</a></li>
+         <li><a href="https://derickchang.github.io/CS/Point%20and%20Shoot%20camera.html">Point and Shoot Camera</a></li> 
+      </ul>
+    </li>
+  </ul>
+   <h1 style="color:black;"><u>What is Digital Camera?</u></h1>
+   <p>
+    Digital cameras use its electronic image sensor converting light into digital data, which is then being processed and saved on a memory card. You can review the results immediately, transfer the data to other devices, and utilize a wide range of functions such as adjusting resolution, zooming, and shooting settings. In daily life, one of the most common devices included digital cameras that we must have is smart phones, which keeps cameras updating their image quality and manual features for people to capture every memorable moment in their lives.
+   </p>
+   <h1 style="color:black;"><u>How does a camera works?</u></h1>
+   <p>
+    After the user presses the flash button, the electronic sensor inside the camera receives light coming through the camera lens. It then transforms the light into electrical signals. The image processor then analyzes and changes all signals into digital data and saved in  a memory card or internal memory. Users can control different settings such as exposure, focus, adding filters to achieve the result they desired.
+  </p>
+   <h1 style="color:black;"><u>Background of Digital Camera Development</u></h1>
+    <p>
+      Photography has undoubtedly been transformed by digital cameras. In 1975, Kodak stunned the world by debuting the <span class="dark-red">first digital camera</span>. Weighing around 3.6kg, it took 23 seconds to take a low-resolution picture. Just imagine your entire family posing and smiling for such an extended period of time; it must have been a difficult job!
+    </p>
+    <img src="first_camera.jpg" alt="First Digital Camera" width="300" />
+    <p>
+      Fast forward to today, cameras have significantly improved in terms of <span class="dark-red">speed, resolution, low-light performance, connectivity, and other areas</span>. Digital cameras are essential in many fields these days, especially for journalists who depend on them to take high-resolution images in real-time so stories can be reported quickly, scientists who capture objects in astronomy and record seconds or days of details for their studies.
+    </p>
+    <p>
+      As we dig deeper into the topic, we will explore the architecture of <b>independent and dependent cameras</b>, highlighting their merits and demerits, as well as their application in various industries of the economy.
+    </p>
+    <p class="bright-red">
+      Are you prepared for this amazing adventure? Click the button!
+    </p>
+    <button class="big-button" onclick="takePhoto()">Say Cheese!</button>
+      <h1 style="color:black;"><u>Architecture of Digital Camera</u></h1>
+  <dl>
+    <dt><b>Lens</b></dt>
+    <dd>Camera lens are optical parts that allow light to focus onto the image sensor through bending and refracting the light, which is how a camera captures a photo. <span class="dark-red">The quality and type of the lens determines the clarity, sharpness of the image.</span> The different types of lens differs by its focal length and apertures for different type of photos with different ranges. The basic types of lens are prime and zoom lens which includes types of macro lens, telephone lens, wide angle lens, standard lens and speciality lens. Its variance in view allows photographer to take different styles of photos like wide angle lens for landscape, macro lens to zoom into very details and the so.</dd>
+    <dt><b> Shutter</b></dt>
+    <dd>The shutter controls the time that the lens is exposed to light. <span class="dark-red">The time of light exposure are determined by the light condition around, movement of the object and the so.</span>Better camera can have better precision in controlling how frequent the shutter moves. The usual type of shutter includes either the leaf shutter or the focal-plane shutter. Their differences is the position that they are in, the leaf shutter is usually between or just behind the lens while the latter one is in front of the lens. These shutters are either mechanic or electronical, where mechanical ones are more professional and the latter are usually used in cheaper digital cameras.</dd>
+    <dt><b>Image Sensor</b></dt>
+    <dd>Image Sensor comes in various of types but ultimately it comes down to its ability of converting the light received through the lens into electrical signals that can be captured and understood. The variety of types comes from the nonstop improvement in the device’s details like components like size, resolution, speed and the so, Back to the types of image sensor, it could be differentiate into structure types, chroma types or shutter.</dd>
+    <dt><b>Viewfinder</b></dt>
+    <dd>The viewfinder is the eyepiece that photographers look through to see what they are capturing, which usually divides in two types which are <span class= "dark-red">Pentaprisms and Pentamirrors</span>. Their differences in its professionalism. Pentaprisms are premium versions where the material involved is usually glass while the latter used plastic which differs in price. As for the working mechanism, either types can be optical or electronic basing on what the camera is, professional uses electronic most of the times.</dd>
+  </dl>
+    <p>Do you have any comment?</p>
+    <input type="text" id="textinput"/>
+    <button id="button_add" onclick="addComment();">Add</button>
+    <p>Your comment:</p>
+    <p id="result"></p>
+
+    <h1 style="color:black;"><u>References:</u></h1>
+    <ol>
+      <li>https://www.masterclass.com/articles/basic-photography-101-understanding-camera-lenses</li>
+      <li>https://greatbigphotographyworld.com/camera-viewfinder/</li>
+      <li>https://thinklucid.com/tech-briefs/understanding-digital-image-sensors/</li>
+      <li>https://www.britannica.com/technology/shutter-photography</li>
+    </ol>
+
+  </main>
+   <script>
+    function takePhoto() {
+      alert("Cheese! A photo has been taken! Let's learn more about cameras!");
+    }
+  </script>
+</body>
+</html>
